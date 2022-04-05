@@ -20,7 +20,7 @@ import lib.datasets.kitti.kitti_eval_python.kitti_common as kitti
 class KITTI_Dataset(data.Dataset):
     def __init__(self, split, cfg):
         # basic configuration
-        self.root_dir = cfg.get('root_dir', '/data1/czy/ICLR2022/monodistill-ICLR-V2/data/KITTI')
+        self.root_dir = cfg.get('root_dir', '../../data/KITTI')
         self.split = split
         self.num_classes = 3
         self.max_objs = 50
@@ -49,7 +49,7 @@ class KITTI_Dataset(data.Dataset):
         # path configuration
         self.data_dir = os.path.join(self.root_dir, 'object', 'testing' if split == 'test' else 'training')
         self.image_dir = os.path.join(self.data_dir, 'image_2')
-        self.depth_dir = os.path.join(self.data_dir, 'depth_gt_completion')
+        self.depth_dir = os.path.join(self.data_dir, 'depth_2')
         self.calib_dir = os.path.join(self.data_dir, 'calib')
         self.label_dir = os.path.join(self.data_dir, 'label_2')
 
